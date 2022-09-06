@@ -38,30 +38,22 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    
-    // TODO: Insert the Appllo Provider and also the closing tag at the end 
-    
+    <ApolloProvider client={client}>
+      // TODO: Insert the Appllo Provider and also the closing tag at the end
       <Router>
         <>
           <Navbar />
           <Routes>
-            <Route 
-              path="/" 
-              element={<SearchBooks/>} 
-            />
-            <Route 
-              path="/saved" 
-              element={<SavedBooks/>} 
-            />
-            <Route 
-              path='*' 
+            <Route path="/" element={<SearchBooks />} />
+            <Route path="/saved" element={<SavedBooks />} />
+            <Route
+              path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
             />
           </Routes>
         </>
       </Router>
-
-
+    </ApolloProvider>
   );
 }
 
